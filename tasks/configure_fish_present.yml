@@ -1,0 +1,7 @@
+- name: fish | configure | create j function
+  template:
+    src: j.fish.j2
+    dest: "{{ shell_config_dir }}/functions/{{ j_alias_name }}.fish"
+  tags:
+    - fish
+ 

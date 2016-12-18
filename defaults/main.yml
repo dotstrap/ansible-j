@@ -1,0 +1,33 @@
+---
+xdg_config_home: "{{ ansible_env.XDG_CONFIG_HOME | default(default_xdg_config_home) }}"
+
+#####=== configure ===#####
+
+# The state in which settings are written
+# choices: [ present, absent ]
+configure_state: present
+
+# Override this instead of configure_state if you use that elsewhere
+# choices: [ present, absent ]
+j_configure_state: "{{ configure_state }}"
+
+# Shell configuration directory
+# default:
+#   - bash: ~/
+#   - zsh: ~/
+#   - fish: ~/.config/fish/
+shell_config_dir: "{{ default_shell_config_dir }}"
+
+# Shell startup file where settings are written to.
+# default:
+#   - bash: ~/.bash_profile
+#   - zsh: ~/.zshrc
+#   - fish: ~/.config/fish/config.fish
+shell_config_file: "{{ default_shell_config_file }}"
+
+# Override this instead of shell_config_file if you use that elsewhere 
+# (or override shell_config_file if you want that to propogate here as well)
+j_shell_config_file: "{{ shell_config_file }}"
+
+# The name of the j command/alias
+j_alias_name: "j"

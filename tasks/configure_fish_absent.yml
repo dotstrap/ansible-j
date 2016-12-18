@@ -1,0 +1,6 @@
+- name: fish | configure | remove j function
+  file:
+    path: "{{ shell_config_dir }}/functions/{{ j_alias_name }}.fish"
+    state: absent
+  tags:
+    - fish

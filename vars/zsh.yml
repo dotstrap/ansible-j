@@ -1,0 +1,4 @@
+---
+
+default_shell_config_dir: "{{ ansible_user_dir }}"
+default_shell_config_file: "{{ zsh_config_file }}"
