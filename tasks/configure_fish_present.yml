@@ -1,7 +1,11 @@
-- name: fish | configure | create j function
-  template:
-    src: j.fish.j2
-    dest: "{{ shell_config_dir }}/functions/{{ j_alias_name }}.fish"
+- block:
+  - name: fish | configure | create j function
+    template:
+      src: j.fish.j2
+      dest: "{{ shell_config_dir }}/functions/{{ j_alias_name }}.fish"
+
+  - name: fish | configure | export variables
+    command: fish -c "set -Ux {{ item.name }} \"{{ item.value }}\""
+    with_items: "{{ j_shell_export_variables }}"
   tags:
     - fish
- 

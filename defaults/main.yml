@@ -25,9 +25,12 @@ shell_config_dir: "{{ default_shell_config_dir }}"
 #   - fish: ~/.config/fish/config.fish
 shell_config_file: "{{ default_shell_config_file }}"
 
-# Override this instead of shell_config_file if you use that elsewhere 
+# Override this instead of shell_config_file if you use that elsewhere
 # (or override shell_config_file if you want that to propogate here as well)
 j_shell_config_file: "{{ shell_config_file }}"
 
 # The name of the j command/alias
 j_alias_name: "j"
+
+# The variable name(s) and values(s) to export
+j_shell_export_variables: "{{ default_shell_export_variables }}"

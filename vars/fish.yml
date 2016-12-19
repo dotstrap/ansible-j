@@ -2,3 +2,16 @@
 
 default_shell_config_dir: "{{ xdg_config_home }}/fish"
 default_shell_config_file: "{{ xdg_config_home }}/fish/config.fish"
+
+default_shell_export_variables:
+  - name: FZF_CD_WITH_HIDDEN_COMMAND
+    value: >-
+      find /
+      \( -path '*/\\.git*' -o -path '*node_modules*' -o -path '/System'
+      -o -path '/private/var' -o -path '*cache*' -o -path '*Cache*'
+      -o -path '*Library*' -o -path '*.photoslibrary' -o -path '*vsprojects'
+      -o -path '*vcxproj' -o -path '/\\.*' -o -path '*.app' -o -path '*locale*'
+      -o -path '*Frameworks*' -o -path '*apm*' -o -path '*node-gyp*'
+      -o -path '*blob-store*' -o -path '*atom/packages*' -o -path '*Crashes'
+      -o -fstype 'dev' -o -fstype 'proc' \)
+      -prune -o -type d -print ^/dev/null
