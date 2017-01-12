@@ -10,6 +10,6 @@
     - "configure_default.yml"
   tags:
     - bootstrap
-    - bootstrap_dircolors
+    - bootstrap_j
     - configure
-    - configure_dircolors
+    - configure_j
