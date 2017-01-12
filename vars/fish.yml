@@ -12,6 +12,9 @@ default_shell_export_variables:
       -o -path '*Library*' -o -path '*.photoslibrary' -o -path '*vsprojects'
       -o -path '*vcxproj' -o -path '/\\.*' -o -path '*.app' -o -path '*locale*'
       -o -path '*Frameworks*' -o -path '*apm*' -o -path '*node-gyp*'
-      -o -path '*blob-store*' -o -path '*atom/packages*' -o -path '*Crashes'
+      -o -path '*blob-store*' -o -path '*Album Artwork*' -o -path '*Crashes'
+      -o -path '*atom/packages*'  -o -path '*anaconda' -o -path '*site-packages*'
+      -o -path '*Cellar*' -o -path '*Caskroom*' -o -path '*plugged*'
+      -o -path '*terminfo*' -o -path '*zoneinfo*'
       -o -fstype 'dev' -o -fstype 'proc' \)
       -prune -o -type d -print ^/dev/null
