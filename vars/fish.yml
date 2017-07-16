@@ -6,7 +6,7 @@ default_shell_config_file: "{{ xdg_config_home }}/fish/config.fish"
 default_shell_export_variables:
   # TODO: this should go in dotstrap/ansible-fzf repo
   - name: FZF_DEFAULT_OPTS
-    value: --inline-info --tiebreak=end
+    value: --inline-info --tiebreak=end --select-1 --exit-0
 
   - name: FZF_CD_COMMAND
     value: >-
