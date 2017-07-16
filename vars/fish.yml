@@ -15,6 +15,10 @@ default_shell_export_variables:
       -o -path '*blob-store*' -o -path '*Album Artwork*' -o -path '*Crashes'
       -o -path '*atom/packages*'  -o -path '*anaconda' -o -path '*site-packages*'
       -o -path '*Cellar*' -o -path '*Caskroom*' -o -path '*plugged*'
-      -o -path '*terminfo*' -o -path '*zoneinfo*'
+      -o -path '*terminfo*' -o -path '*zoneinfo*' 
+      -o -path '*.pkg*' -o -path '*.lproj*' -o -path '*.bundle*'
+      -o -path '*.key*' -o -path '*.numbers*' -o -path '*.pages*'
+      -o -path '*.xcplaygroundpage*' -o -path '*.playground*'
+      -o -path '*.ipynb_checkpoints*' -o -path '*.eggs*'
       -o -fstype 'dev' -o -fstype 'proc' \)
       -prune -o -type d -print ^/dev/null
