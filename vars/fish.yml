@@ -8,6 +8,7 @@ default_shell_export_variables:
   - name: FZF_DEFAULT_OPTS
     value: --inline-info --tiebreak=end --select-1 --exit-0
 
+  # TODO: make this non macos dependent
   - name: FZF_CD_COMMAND
     value: >-
       mdfind kind:folders | 
