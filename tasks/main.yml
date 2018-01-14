@@ -4,7 +4,7 @@
   include_vars: "{{ ansible_user_shell_name }}.yml"
   tags: always
 
-- include: "{{ item }}"
+- include_tasks: "{{ item }}"
   with_first_found:
     - "configure_{{ ansible_user_shell_name }}_{{ j_configure_state }}.yml"
     - "configure_default.yml"
