@@ -1,12 +1,6 @@
-- block:
-  - name: fish | configure | remove j function
-    file:
-      path: "{{ shell_config_dir }}/functions/{{ j_alias_name }}.fish"
-      state: absent
-
-  # FIXME: for some reason this doesnt work...
-  - name: fish | configure | erase exported variables
-    command: fish -c "set -e {{ item.name }}"
-    with_items: "{{ j_shell_export_variables }}"
+- name: fish | configure | remove {{ j_alias_name }} function
+  file:
+    path: "{{ shell_config_dir }}/functions/{{ j_alias_name }}.fish"
+    state: absent
   tags:
     - fish

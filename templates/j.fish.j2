@@ -1,27 +1,13 @@
 function {{ j_alias_name }} -d "cd with smarts"
-  count $argv > /dev/null 
-  and set -l directory $argv[1]
-
-  if test -z $directory
-    __fzf_cd
-    return
+  function _cd
+    cd ({{ j_find_directories_command }} | {{ j_filter_command }} -q "$argv")
   end
 
-  if test -d $directory
-    cd $directory
-    return
-  end
-
-  # FIXME: fix fzf functions upstream so they accept params; this is ridiculous...
-  set -q FZF_CD_OPTS
-  and set -l saved_fzf_cd_opts $FZF_CD_OPTS
-
-  set -gx FZF_CD_OPTS "-q $argv $saved_fzf_cd_opts"
-  __fzf_cd
-
-  if set -q saved_fzf_cd_opts
-    set -Ux FZF_CD_OPTS $saved_fzf_cd_opts
+  if test -z $argv
+    _cd ''
+  else if test -d $argv
+    cd $argv
   else
-    set -e FZF_CD_OPTS
+    _cd $argv
   end
 end
