@@ -5,7 +5,7 @@ j_default_find_directories_command: |-
                   -o -path '*cuda-*/*' -o -path '*libreoffice*/*' \
                   -o -path '*modules/*' -o -path '*firmware*' \
                   -o -path '*linux-headers*/*' -o -path '*/share/**/*' \
-                  -o -path '*lib/x86_64-linux-gnu/**/*' \
+                  -o -path '*lib/x86_64-linux-gnu/**/*' -o -path '/tmp/*' \
                   -o -path '*/run/*' -o -path '*systemd/*' -o -path '*bug/*' \
                   -o -path '*cache*' -o -path '*Cache*' -o -path '*Crashes' \
                   -o -path '*/logs/*' -o -path '*plugged*' -o -path '*man/*' \
