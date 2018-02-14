@@ -35,27 +35,8 @@ j_alias_name: "j"
 # The variable name(s) and values(s) to export
 j_shell_export_variables: "{{ default_shell_export_variables }}"
 
-j_find_directories_command: |-
-  find . \( -path '*/\.git*' -o -path '*node_modules*' \
-                    -o -path '/System' -o -path '/private/var' \
-                    -o -path '*cache*' -o -path '*Cache*' -o -path '*Crashes' \
-                    -o -path '*/logs/*' -o -path '*plugged*' \
-                    -o -path '*Library*' -o -path '*.photoslibrary' \
-                    -o -path '*vsprojects' -o -path '*vcxproj' \
-                    -o -path '*locale*' -o -path '*Frameworks*' \
-                    -o -path '*apm*' -o -path '*atom/packages*' \
-                    -o -path '*blob-store*' -o -path '*Album Artwork*' \
-                    -o -path '*anaconda' -o -path '*.ipynb_checkpoints*' \
-                    -o -path '*site-packages*' -o -path '*.eggs*' \
-                    -o -path '*Cellar*' -o -path '*Caskroom*' \
-                    -o -path '*terminfo*' -o -path '*zoneinfo*' \
-                    -o -path '*.app' -o -path '*.pkg*' \
-                    -o -path '*.lproj*' -o -path '*.bundle*' \
-                    -o -path '*.key*' -o -path '*.numbers*' -o -path '*.pages*' \
-                    -o -path '*.xcplaygroundpage*' -o -path '*.playground*' \
-                    -o -path '*bower_components*' -o -path '*node-gyp*' \
-                    -o -fstype 'dev' -o -fstype 'proc' \) \
-          -prune -o -type d -print ^/dev/null
+# The command used by j to find directories
+j_find_directories_command: "{{ j_default_find_directories_command }}"
 
 # must have the '-q' command line flag, see: https://github.com/junegunn/fzf
 j_filter_command: fzf

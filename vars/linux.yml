@@ -1,0 +1,33 @@
+---
+
+j_default_find_directories_command: |-
+  find / \( -path '/sys/*' -o -path '*brltty/*' -o -path '/mnt/*' \
+                  -o -path '*cuda-*/*' -o -path '*libreoffice*/*' \
+                  -o -path '*modules/*' -o -path '*firmware*' \
+                  -o -path '*linux-headers*/*' -o -path '*/share/**/*' \
+                  -o -path '*lib/x86_64-linux-gnu/**/*' \
+                  -o -path '*/run/*' -o -path '*systemd/*' -o -path '*bug/*' \
+                  -o -path '*cache*' -o -path '*Cache*' -o -path '*Crashes' \
+                  -o -path '*/logs/*' -o -path '*plugged*' -o -path '*man/*' \
+                  -o -path '/etc/*.d*' -o -path '*doc*/*' \
+                  -o -path '*help/*' -o -path '*help-langpack/*' \
+                  -o -path '*samples*/*' -o -path '*template*/*' \
+                  -o -path '*themes/*' -o -path '*icons/*' -o -path '*fonts/*' \
+                  -o -path '*vsprojects' -o -path '*vcxproj' \
+                  -o -path '*locale*' -o -path '*Frameworks*' \
+                  -o -path '*perl*/*' -o -path '*snapd*/*' \
+                  -o -path '*/\.git*' -o -path '*node_modules*' \
+                  -o -path '*apm*' -o -path '*atom/packages*' \
+                  -o -path '*anaconda' -o -path '*.ipynb_checkpoints*' \
+                  -o -path '*site-packages*' \
+                  -o -path '*.eggs*' -o -path '*dist-packages*' \
+                  -o -path '*terminfo*' -o -path '*zoneinfo*' \
+                  -o -path '*.idea*' -o -path '*.config/*' \
+                  -o -path '*local/share/*' -o -path '*PyCharm*' \
+                  -o -path '*snap/*' -o -path '*.java*' \
+                  -o -path '*.atom/*' -o -path '*.ansible/*' \
+                  -o -path '*.pki*' -o -path '*.gnupg*' \
+                  -o -path '*.lproj*' -o -path '*.bundle*' \
+                  -o -path '*bower_components*' -o -path '*node-gyp*' \
+                  -o -fstype 'dev' -o -fstype 'proc' \) \
+          -prune -o -type d -print ^/dev/null

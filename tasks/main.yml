@@ -1,7 +1,10 @@
 ---
 
 - name: setup
-  include_vars: "{{ ansible_user_shell_name }}.yml"
+  include_vars: "{{ item }}"
+  with_items:
+    - "{{ ansible_user_shell_name }}.yml"
+    - "{{ ansible_system | lower }}.yml"
   tags: always
 
 - include_tasks: "{{ item }}"
